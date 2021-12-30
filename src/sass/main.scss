@@ -1,0 +1,221 @@
+// fonts -----------------------------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+    font-family: "proxima";
+    src: url("fonts/proxima-nova-bold.woff") format("woff");
+    font-style: normal;
+    font-weight: 700;
+}
+// reset -----------------------------------------------------------------------------------
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,
+li,
+ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+body {
+    min-width: 320px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.center {
+    margin: 0 auto;
+    max-width: 651px;
+}
+/*chat============================================================*/
+
+.chat {
+    width: 100%;
+    position: relative;
+    
+    &__wrapper-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -100;
+    }
+
+    &__image {
+        max-width: 100%;
+        height: 768px;
+        object-fit: cover;
+    }
+    &__text {
+        background-color: #F1F3F5;
+        font-size: 14px;
+        padding: 15px 15px 7px 15px;
+        line-height: 24px;
+        max-width: 470px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #F1F3F5;
+            position: absolute;
+            left: -10px;
+            top: 7px;
+        }
+
+    }
+
+    &__text--to {
+
+        &::before {
+            left: 92%;
+            top: 7px;
+        }
+
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 46px 19px 0px 15px;
+        max-height: 527px;
+        overflow: scroll;
+
+    }
+
+    &__item {
+
+        width: 100%;
+        display: flex;
+        margin-bottom: 20px;
+
+    }
+    &__item--to {
+
+        flex-direction: row-reverse;
+
+      .chat__avatar-wrapper {
+          margin-right: 0;
+          margin-left: 18px;
+      }
+    }
+    &__avatar-wrapper {
+        height: 47px;
+        margin-right: 18px;
+        position: relative;
+
+    }
+
+    &__avatar {
+        object-fit: cover;
+    }
+
+    &__date {
+        margin-bottom: 30px;
+        color: #000;
+        position: relative;
+
+    }
+    &__time {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__time::before {
+        content: '';
+        display: block;
+        height: 1px;
+        width: calc(49% - 61px);
+        background-color: #F1F3F5;
+        position: absolute;
+        top: 10px;
+        left: -14px;
+    }
+    &__time::after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: calc(49% - 60px);
+        background-color: #F1F3F5;
+        position: absolute;
+        right: -19px;
+        top: 10px;
+    }
+    
+    &__line {
+        position: relative;
+        margin-bottom: 10px;
+
+        &::before {
+            content: '';
+            display: block;
+            height: 1px;
+            max-width: 651px;
+            background-color: #F1F3F5;
+        }
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        height: 140px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    &__message {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        height: 130px;
+    }
+
+    &__label {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+     
+    }
+
+    &__send {
+        font-family: 'proxima';
+        position: absolute;
+        bottom: -60px;
+        left: 8px;
+        display: block;
+        font-size: 16px;
+        line-height: 24px;
+        background-color: #0F54B9;
+        color: #F1F3F5;
+        padding: 10px 22px 7px;
+        outline: none;
+        border: none;
+        border-radius: 21px;
+        -webkit-border-radius: 21px;
+        -moz-border-radius: 21px;
+        -ms-border-radius: 21px;
+        -o-border-radius: 21px;
+    }
+
+}
